@@ -199,4 +199,29 @@
     <servlet-name>logout</servlet-name>
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>public_add</display-name>
+    <servlet-name>public_add</servlet-name>
+    <servlet-class>myServlets.public_add</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>public_add</servlet-name>
+    <url-pattern>/public_add</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>doctors_detail</display-name>
+    <servlet-name>doctors_detail</servlet-name>
+    <servlet-class>myServlets.doctors_detail</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>doctors_detail</servlet-name>
+    <url-pattern>/doctors_detail</url-pattern>
+  </servlet-mapping>
+  
+  
+
+
+
 </web-app>

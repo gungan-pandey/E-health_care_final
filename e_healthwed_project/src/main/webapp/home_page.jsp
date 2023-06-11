@@ -23,7 +23,7 @@ body{
     text-align:center;
   	float:left;
     font-size:30px;
-     background: #33475B;
+      background-color: rgba(51,71,91,0.6);
     color:white;
     text-decoration-line: underline;
     text-shadow: 2px 2px 9px black;
@@ -32,8 +32,7 @@ body{
     }
 h4{
 	margin-top:26px;
-    color: rgba(234, 240, 246, 0.8);
-    
+  	color:white;
     text-align: center;
 }
 button{
@@ -55,10 +54,10 @@ button:hover{
 </style>
 </head>
 <body >
-<div id='div1'><h4>E-Health Management System</h4></div>
+<div id="div1"><h4>E-Health Management System</h4></div>
 
 <a  href="doctor_login.jsp"><button id="b1"><i class="fa fa-user-md" style="font-size:80px;"></i><br><br>Doctor login</button></a>
 <a  href="admin_login.jsp"><button id ="b2"><i class="fas fa-user-alt" style="font-size:80px;"></i><br><br>Admin login</button></a>
-<a  href="public.jsp"><button id ="b3"><i class="fas fa-users" style="font-size:85px;"></i><br><br>Public</button></a>
+<a  href="public_login.jsp"><button id ="b3"><i class="fas fa-users" style="font-size:85px;"></i><br><br>Public</button></a>
 </body>
 </html>

@@ -11,15 +11,32 @@
 .doctor_div{
     position: absolute;
     top:180px;
-    left:150px;
-    height:600px;
-	width:950px;
-	padding-left:80px;
+    left:160px;
+    height:400px;
+	width:1000px;
 	justify-content: center;
+	background-color: rgb(176,196,222);
+    overflow: auto;
 			}
+body {
+     overflow: hidden;
+}
 table{
-    margin-top:50px;
-    margin-left:-35px;
+    margin-top:0px
+    margin-left: 35px;
+    table-layout: fixed;
+	padding-left:70px;
+	width: 1000px; /* Set the width to match the doctor_div */
+ 	border-collapse: collapse;
+}
+thead {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+}
+tbody {
+  overflow-y: scroll;
+  height: 300px; /* Adjust the height as needed */
 }
 td{
 		padding:10px;
@@ -41,7 +58,7 @@ try{
 	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/ehealthcare","root","1234");  
 	Statement st=con.createStatement();
 	ResultSet rs=st.executeQuery("select * from diagnose");
-	out.println("<table id='customers' border=1 width='600'><tr>");
+	out.println("<table id='customers' border=1><thead><tr>");
 	out.println("<td><h3>diagnose_id</h3></td>");
 	out.println("<td><h3>dignose_date</h3> </td>");
 	out.println("<td><h3>disease_id</h3></td>");
@@ -49,7 +66,8 @@ try{
 	out.println("<td><h3>patient_id</h3></td>");
 	out.println("<td><h3>hospital_id</h3></td>");
 	out.println("<td><h3>doctors_id</h3></td>");
-	out.println("<td><h3>remarks</h3></td></tr>");
+	out.println("<td><h3>remarks</h3></td></tr></thead>");
+	out.println("<tbody>");
 	while(rs.next())
 	{
 		out.print("<tr><td> "+rs.getString("diagnose_id")+" "+"     </td>" );
@@ -61,6 +79,8 @@ try{
 		out.print("<td> "+rs.getString("doctors_id")+" "+"  </td>");
 		out.print("<td> "+rs.getString("remarks")+"\n\n"+    "</td></tr>");
 	}
+	out.println("</tbody>");
+    out.println("</table>");
 }
 catch(Exception e)
 { 

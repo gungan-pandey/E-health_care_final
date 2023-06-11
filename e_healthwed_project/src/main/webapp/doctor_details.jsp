@@ -12,44 +12,35 @@
 	margin:0px;
 	padding:0px;
 }
-#imgdiv{
-    position:absolute;
-    top:100px;
-	width:230px;
-	height:230px;
-	background-image:url("doctor_dummy.jpg");
-	left:900px;
-}
+
 .mydiv{
-		margin-top:10px;
-		width:300px;
-		height:200px;
-		margin-left:50px;
-		background-color:#FFEFD5;
-		padding:5px;
-		padding-top:10px;
+		position: absolute;
+    	top:200px;
+		width:550px;
+		height:300px;
+		background-color:rgba(204,204,255,0.6);
+		padding-left:20px;
+		padding-top:20px;
+		justify-content:center;
+		font-size:20px;
+		font-style:bold;
+		
 }
 
-#about{
-		position:absolute;
-        top:300px;
-		margin:20px;
-		margin-left:50px;
-		width:800px;
-		height:290px;		
-		background-color:#FFEFD5;
-}
-#heading{
-    
-     background-color:#D2B48C;
-     text-align:center;
-     font-style:bold;
 
+.maindiv{
+	top:20px;
+	justify-content: center;
+	margin-left:380px;
+	 
+}
+h3{
+	text-align:center;
 }
 </style>
 </head>
 <body>
-
+<jsp:include page="public2.jsp"/>
 <div class='maindiv'>
 <%
 	int did = Integer.parseInt(request.getParameter("val"));
@@ -61,10 +52,11 @@
 		ResultSet rs=st.executeQuery("Select doctors.doctor_name, doctors.year_of_joining, doctors.specialization, hospital.hospital_name, hospital.hospital_add, doctors.doctor_id From doctors Inner Join diagnose On diagnose.doctors_id = doctors.doctor_id Inner Join hospital On diagnose.hospital_id = hospital.hospital_id Where doctors.doctor_id="+did);
 		if(rs.next())
 		{  
+			
+			out.print("<div class='mydiv'>");
 			%>
 			<div id="heading"><h3>Details of Dr <%=rs.getString("doctors.doctor_name") %></h3><br><hr> </div> 
-			<%
-			out.print("<div class='mydiv'>");
+			<% 
 			out.print("Doctor's Name : &nbsp;&nbsp;"+rs.getString("doctors.doctor_name")+"<br><br>" );
 			out.print("Specialization : &nbsp;&nbsp; " +rs.getString("doctors.specialization")+"<br><br>");
 			out.print("Year of joining : &nbsp;&nbsp; " + rs.getString("doctors.year_of_joining")+"<br><br>");
@@ -77,12 +69,6 @@
 		
 	}
 %>
-
-<div id="imgdiv"> </div>     
-<div id="about"><p><h2>About...</h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.sunt in culpa qui officia deserunt mollit anim id est laborum.
-				   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.sunt in culpa qui officia deserunt mollit anim id est laborum.
-				   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.sunt in culpa qui officia deserunt mollit anim id est laborum.
-				</p></div>
 
 </div> 
 </body>

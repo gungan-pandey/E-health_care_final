@@ -39,13 +39,13 @@ input{
 </style>
 </head>
 <body>
-<form action="admin">
+<form action="public_add">
 <div class="div1">
-<h3 style="padding-left:15px;"><i class="fas fa-user-alt" style="font-size:30px;"></i>&nbsp;&nbsp;Admin Login</h3><hr><br>
-<label style="padding-left:15px;">Email</label><br>
-<input type="email" id="email" name="email" placeholder="enter email"><br><br>
-<label style="padding-left:15px;">Password </label><br>
-<input type="password"  id="email" name="pwd" placeholder="enter password" ><br><br><br>
+<h3 style="padding-left:15px;"><i class="fas fa-user-alt" style="font-size:30px;"></i>&nbsp;&nbsp;Patient Login</h3><hr><br>
+<label style="padding-left:15px;">Patient Id</label><br>
+<input type="text" id="email" name="email" placeholder="enter patient_id"><br><br>
+<label style="padding-left:15px;">Name</label><br>
+<input type="text"  id="email" name="pwd" placeholder="enter name" ><br><br><br>
 <button type="submit">Login</button>   
 
 </div>

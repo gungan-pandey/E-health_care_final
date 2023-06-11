@@ -40,7 +40,7 @@ table
 	 font-family: 'Ubuntu', sans-serif;
 	 padding-top:40px;
 	 font-weight:bold;
-	 margin-left:200px;
+	 margin-left:170px;
 	 color:black;
 }
 input {
@@ -81,7 +81,7 @@ button:hover
 <form action="add_doctors">
 <table>
     
-    <h1 style="margin-left:170px; color:white;">Doctor</h1>
+    <h1 style="margin-left:250px; color:white;">Doctor</h1>
     
 	<tr>
     <td><label for="did"> Doctor id :</label></td>

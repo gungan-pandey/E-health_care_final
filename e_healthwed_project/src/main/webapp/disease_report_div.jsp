@@ -12,15 +12,32 @@
 
     position: absolute;
     top:180px;
-    left:290px;
-    height:590px;
+    left:350px;
+    height:400px;
 	width:770px;
-	padding-left:80px;
 	justify-content: center;
+	background-color: rgb(176,196,222);
+    overflow: auto;
+}
+body {
+     overflow: hidden;
 }
 table{
-    margin-top:50px;
-    margin-left:-35px;
+    margin-top:0px
+    margin-left: 35px;
+    table-layout: fixed;
+	padding-left:70px;
+	width: 770px; /* Set the width to match the doctor_div */
+ 	border-collapse: collapse;
+}
+thead {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+}
+tbody {
+  overflow-y: scroll;
+  height: 300px; /* Adjust the height as needed */
 }
 td{
 		padding:10px;
@@ -41,10 +58,11 @@ try{
 	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/ehealthcare","root","1234");  
 	Statement st=con.createStatement();
 	ResultSet rs=st.executeQuery("select * from disease");
-	out.println("<table  id='customers' border=1 width='600'><tr>");
+	out.println("<table  id='customers' border=1><thead><tr>");
 	out.println("<td><h3>Disease ID</h3></td>");
 	out.println("<td><h3>Disease Name</h3> </td>");
-	out.println("<td><h3>Delete/Edit </h3></td></tr>");
+	out.println("<td><h3>Delete/Edit </h3></td></tr></thead>");
+	out.println("<tbody>");
 	while(rs.next())
 	{
 		out.print("<tr><td> "+rs.getString("disease_id")+" "+"     </td>" );
@@ -52,6 +70,9 @@ try{
 		out.print("<td><a href='deletedisease?val="+rs.getInt("disease_id")+"'> Delete </a>");
 		out.print("/ <a href='edit_disease.jsp?val="+rs.getInt("disease_id")+"'> Edit </a></td></tr>");
 	}
+	out.println("</tbody>");
+    out.println("</table>");
+
 }
 catch(Exception e)
 { 

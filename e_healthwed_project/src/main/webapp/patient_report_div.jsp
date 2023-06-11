@@ -12,25 +12,42 @@
 
     position: absolute;
     top:180px;
-    left:305px;
-    height:590px;
+    left:350px;
+    height:400px;
 	width:770px;
-	padding-left:80px;
 	justify-content: center;
-   
-
-			}
-table{
-    margin-top:50px;
-     margin-left:-35px;
+	background-color: rgb(176,196,222);
+    overflow: auto;
+   }
+body {
+     overflow: hidden;
 }
+table{
+    margin-top:0px
+    margin-left: 35px;
+    table-layout: fixed;
+	padding-left:70px;
+	width: 770px; /* Set the width to match the doctor_div */
+ 	border-collapse: collapse;
+     
+}
+thead {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+}
+tbody {
+  overflow-y: scroll;
+  height: 300px; /* Adjust the height as needed */
+}
+
 td{
 		padding:10px;
 		margin:10px;
 		text-align:center;
 		
 }
-x
+
 </style>
 </head>
 <body>
@@ -44,12 +61,13 @@ try{
 	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/ehealthcare","root","1234");  
 	Statement st=con.createStatement();
 	ResultSet rs=st.executeQuery("select * from patient");
-	out.println("<table id='customers' border=1 width='600'><tr>");
-	out.println("<td><h3>Patient ID</h3></td>");
-	out.println("<td><h3>Patient Name</h3> </td>");
-	out.println("<td><h3>Patient Address </h3></td>");
-	out.println("<td><h3>DOB </h3></td>");
-	out.println("<td><h3>Delete/Edit </h3></td></tr>");
+	out.println("<table id='customers' border=1><thead><tr>");
+	out.println("<th><h3>Patient ID</h3></th>");
+	out.println("<th><h3>Patient Name</h3> </th>");
+	out.println("<th><h3>Patient Address </h3></th>");
+	out.println("<th><h3>DOB </h3></th>");
+	out.println("<th><h3>Delete/Edit </h3></th></tr></thead>");
+	 out.println("<tbody>");
 	while(rs.next())
 	{
 		out.print("<tr><td> "+rs.getString("patient_id")+" "+"     </td>" );
@@ -59,6 +77,9 @@ try{
 		out.print("<td><a href='deletepatient?val="+rs.getInt("patient_id")+"'> Delete </a>");
 		out.print("/ <a href='edit_patient.jsp?val="+rs.getInt("patient_id")+"'> Edit </a></td></tr>");
 	}
+
+out.println("</tbody>");
+out.println("</table>");
 }
 catch(Exception e)
 { 

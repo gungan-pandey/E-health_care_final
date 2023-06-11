@@ -26,7 +26,8 @@
 #div2{
     height:600px;
     width:200px;
-    
+   margin-top:50px;
+   
 	float:left;
 	background-color:rgb(176,224,230);
 }
@@ -38,7 +39,7 @@
 		height:40px;
 		margin-top:15px;
 		margin-left:30px;
-      	padding-top:20px;
+      	padding:10px;
       	font-size:25px;
       	font-style:italic;
       	display:block;

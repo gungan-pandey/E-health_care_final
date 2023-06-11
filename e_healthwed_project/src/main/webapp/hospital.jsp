@@ -41,7 +41,7 @@ table
 	 font-family: 'Ubuntu', sans-serif;
 	 padding-top:40px;
 	 font-weight:bold;
-	 margin-left:200px;
+	 margin-left:180px;
 	 color:black;
 }
 input {
@@ -84,7 +84,7 @@ button:hover
 <form action="add_hospital">
 <table>
     
-    <h1 style="margin-left:170px; color:white;">Hospital</h1>
+    <h1 style="margin-left:280px; color:white;">Hospital</h1>
 
 	<tr>
 	<td> <label for="hid"> Hospital ID :</label></td>

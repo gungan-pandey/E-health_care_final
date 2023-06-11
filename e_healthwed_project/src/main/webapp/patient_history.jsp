@@ -13,10 +13,10 @@
 .div1{
 	
 	position: absolute;
-    top:162px;
-    left:220px;
-    height:495px;
-	width:800px;
+    top:182px;
+    left:320px;
+    height:395px;
+	width:700px;
 	padding-left:70px;
 	justify-content: center;
 	
@@ -98,7 +98,7 @@ function fun1()
 <table>
     <tr>
     <td colspan=2>
-    <h1 style="margin-left:40px; color:white;">Patient History</h1>
+    <h1 style="margin-left:40px; margin-top:0px; color:white;">Patient History</h1>
 	</td>
 	</tr>
 	<tr>
